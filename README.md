@@ -18,4 +18,4 @@ I'm a a developer who likes to explore technology. i do web development and some
 ## 💼 [Portfolio](https://github.com/Stektikegh/Portfolio)
 My personal portfolio website showcasing projects and skills.
 - **Tech Stack:** HTML, CSS, JavaScript
-- **Features:** Project showcase, responsive design, interactive elements
+- **Features:** Project showcase, !responsive design, interactive elements

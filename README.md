@@ -8,7 +8,7 @@
 
 ## 🚀 About Me
 
-I'm a developer who likes to explore technology. i do mAInly web and game dev
+I'm a developer who likes to explore technology. i do  web and game dev
 - 🌱 Always learning.
 - 🎮 Loves to play Minecraft.
 - ![](https://cdn.iconscout.com/icon/free/png-512/free-vim-icon-svg-download-png-2945210.png?f=webp&w=15) Vim guy.

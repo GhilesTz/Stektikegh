@@ -21,8 +21,11 @@ jobs:
           *Commits:*
           EOF
           )
-          MESSAGE+="\n"
-          MESSAGE+=$(jq -r '.commits[] | "\t- \(.message)"' <<< '${{ toJson(github.event) }}')
+          
+          MESSAGE+="
+          "
+          
+          MESSAGE+=$(jq -r '.commits[] | "-----------> \(.message)"' <<< '${{ toJson(github.event) }}')
 
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \

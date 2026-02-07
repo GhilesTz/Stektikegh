@@ -1,4 +1,4 @@
-# Hey there! 👋 I'm Stektikegh
+# I'm Ghiles
 ## 🔥 Hot Takes
 <div align="center">
 

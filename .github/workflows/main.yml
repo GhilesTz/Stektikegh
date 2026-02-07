@@ -13,7 +13,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          COMMITS=""
+          
           MESSAGE=$(cat <<EOF
           New push!
           *Author:* $GITHUB_ACTOR
@@ -21,8 +21,8 @@ jobs:
           *Commits:*
           EOF
           )
-          
-          COMMITS+=$(echo toJson(github.event).commits[].message)
+          DATA=$(jq -r '.commits[].message' ${{ toJson(github.event) }})
+          COMMITS=$(echo $DATA)
 
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHAT_ID}" \

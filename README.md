@@ -8,14 +8,13 @@
 
 ## 🚀 About Me
 
-I'm a a developer who likes to explore technology. i do web development and some AI projects and some games, I dont enjoy solving challenges and bringing ideas to life.
+I'm a developer who likes to explore technology. i do web development and some AI projects and some games, I dont enjoy solving challenges and bringing ideas to life.
 
 - 🌱 Always learning.
-- 🎮 Loves to play minecraft.
+- 🎮 Loves to play Minecraft.
 - ![](https://cdn.iconscout.com/icon/free/png-512/free-vim-icon-svg-download-png-2945210.png?f=webp&w=15) Vim guy.
 
 
 ## 💼 [Portfolio](https://github.com/Stektikegh/Portfolio)
 My personal portfolio website showcasing projects and skills.
 - **Tech Stack:** HTML, CSS, JavaScript
-- **Features:** Project showcase, !responsive design, interactive elements

@@ -1,14 +1,28 @@
-name: Telegram Hello bot
+name: Telegram Notify
 
 on:
   push:
 
 jobs:
-  notify:
+  telegram:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Send hello to Telegram
+      - name: Send push details to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          curl -s -X POST https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage \
-          -d chat_id=${{ secrets.TELEGRAM_CHAT_ID }} \
-          -d text="👋 Hello! New push by ${{ github.actor }} on ${{ github.ref_name }}"
+          MESSAGE="👋 *New push!*\n\n"
+          MESSAGE+="*Author:* $GITHUB_ACTOR\n"
+          MESSAGE+="*Branch:* $GITHUB_REF_NAME\n\n"
+          MESSAGE+="*Commits:*\n"
+
+          for commit in $(jq -r '.commits[].message' <<< '${{ toJson(github.event) }}'); do
+            MESSAGE+="- ${commit}\n"
+          done
+
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="$MESSAGE" \
+            -d parse_mode="Markdown"
